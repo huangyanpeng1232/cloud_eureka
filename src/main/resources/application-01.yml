@@ -1,0 +1,28 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: eureka
+
+eureka:
+  instance:
+    hostname: eureka-01
+  client:
+    service-url:
+      defaultZone: http://eureka-02:9001/eureka/,http://eureka-03:9002/eureka/,http://eureka-04:9003/eureka/
+
+
+management:
+  endpoint:
+    configprops:
+      enabled: true
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+info:
+  app:
+    name: eureka-server

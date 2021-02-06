@@ -1,0 +1,27 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: eureka
+
+eureka:
+  instance:
+    hostname: eureka-03
+  client:
+    service-url:
+      defaultZone: http://eureka-01:9000/eureka/,http://eureka-02:9001/eureka/,http://eureka-04:9003/eureka/
+
+management:
+  endpoint:
+    configprops:
+      enabled: true
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+info:
+  app:
+    name: eureka-server
